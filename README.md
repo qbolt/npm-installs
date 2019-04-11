@@ -21,8 +21,8 @@
 $ npm-installs proj1 proj2
 Starting `npm install` for '/Users/johndoe/code/projects/proj1'
 Starting `npm install` for '/Users/johndoe/code/projects/proj2'
-Completed `npm install` for '/Users/johndoe/code/projects/proj1'
-Completed `npm install` for '/Users/johndoe/code/projects/proj2'
+Completed '/Users/johndoe/code/projects/proj1'
+Completed '/Users/johndoe/code/projects/proj2'
 Completed all
 ```
 
@@ -30,14 +30,14 @@ Completed all
 
 ##### Running `npm install` on all projects in a given directory recursively
 
-*If the specified directory contains a `package.json`, it will also have `npm install` called on it.
+*If the specified directory contains a `package.json`, it will also have `npm install` called on it.*
 
 ```bash
 $ npm-installs projects -r
 Starting `npm install` for '/Users/johndoe/code/projects/proj1'
 Starting `npm install` for '/Users/johndoe/code/projects/proj2'
-Completed `npm install` for '/Users/johndoe/code/projects/proj1'
-Completed `npm install` for '/Users/johndoe/code/projects/proj2'
+Completed '/Users/johndoe/code/projects/proj1'
+Completed '/Users/johndoe/code/projects/proj2'
 Completed all
 ```
 ---
@@ -46,7 +46,7 @@ Completed all
 
 Folder structure
 ```
-/projects-root
+/project-root
     /proj1
     /proj2
         /subproj1
