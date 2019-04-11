@@ -1,0 +1,32 @@
+{
+  "name": "npm-installs",
+  "version": "1.0.0",
+  "description": "Run `npm install` on multiple directories",
+  "main": "index.js",
+  "scripts": {
+    "watch": "nodemon .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qbolt/npm-installs.git"
+  },
+  "keywords": [
+    "npm",
+    "install",
+    "multiple",
+    "directories"
+  ],
+  "author": "Quinton Bolt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qbolt/npm-installs/issues"
+  },
+  "homepage": "https://github.com/qbolt/npm-installs#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.11"
+  },
+  "dependencies": {
+    "yargs": "^13.2.2"
+  }
+}
