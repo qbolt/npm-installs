@@ -24,5 +24,8 @@
   "homepage": "https://github.com/qbolt/npm-installs#readme",
   "dependencies": {
     "yargs": "^13.2.2"
+  },
+  "bin": {
+    "npm-installs": "./index.js"
   }
 }

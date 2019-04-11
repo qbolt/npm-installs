@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require('fs')
 const os = require('os')
 const cp = require('child_process')
@@ -36,21 +38,21 @@ const getSubPaths = p => fs.readdirSync(p).map(name => path.join(p, name))
 
 const pathsToUniqueModules = (paths, depth = 0) => {
   const loop = (acc, d = depth, next = acc) => {
-    if (d < 1 || next.length === 0) return acc
-    const sub = next
-      .map(getSubPaths)
-      .flat()
-      .filter(isNpmModuleAndNotNodeModules)
+    if (d < 1 || next.length === 0) {
+      return acc
+    }
+    const sub = next.map(getSubPaths).flat()
     return [...loop([...acc, ...sub], d - 1, sub)]
   }
-
-  return loop([...new Set(paths.map(resolvePath).filter(isNpmModule))])
+  const resolvedPaths = [...new Set(paths.map(resolvePath))]
+  return loop(resolvedPaths, depth, resolvedPaths).filter(
+    isNpmModuleAndNotNodeModules
+  )
 }
 
 const parseArgs = argv => {
   const paths = [...argv._]
   const recursiveDepth = argv.depth
-
   if (paths.length < 1) {
     Yargs.showHelp()
   } else {
