@@ -30,7 +30,7 @@ const npmInstallAndLog = path =>
   Promise.resolve()
     .then(() => console.log(`Starting \`npm install\` for '${path}'`))
     .then(() => createSpawnPromise(npmCommand, ['install', `--prefix`, path]))
-    .then(() => console.log(`Completed \`npm install\` for '${path}'`))
+    .then(() => console.log(`Completed '${path}'`))
 
 const getSubPaths = p => fs.readdirSync(p).map(name => path.join(p, name))
 

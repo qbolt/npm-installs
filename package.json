@@ -4,7 +4,6 @@
   "description": "Run `npm install` on multiple directories",
   "main": "index.js",
   "scripts": {
-    "watch": "nodemon .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,9 +22,6 @@
     "url": "https://github.com/qbolt/npm-installs/issues"
   },
   "homepage": "https://github.com/qbolt/npm-installs#readme",
-  "devDependencies": {
-    "nodemon": "^1.18.11"
-  },
   "dependencies": {
     "yargs": "^13.2.2"
   }
