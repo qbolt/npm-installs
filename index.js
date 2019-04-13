@@ -14,6 +14,8 @@ const isNodeModules = path => path.includes('node_modules')
 
 const notNodeModules = path => !isNodeModules(path)
 
+const isDirectory = path => fs.lstatSync(path).isDirectory()
+
 const isNpmModule = path =>
   fs.existsSync(`${path}/package.json`) && fs.lstatSync(path).isDirectory()
 
@@ -41,7 +43,10 @@ const pathsToUniqueModules = (paths, depth = 0) => {
     if (d < 1 || next.length === 0) {
       return acc
     }
-    const sub = next.map(getSubPaths).flat()
+    const sub = next
+      .map(getSubPaths)
+      .flat()
+      .filter(isDirectory)
     return [...loop([...acc, ...sub], d - 1, sub)]
   }
   const resolvedPaths = [...new Set(paths.map(resolvePath))]
