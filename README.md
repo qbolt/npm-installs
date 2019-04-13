@@ -1,7 +1,7 @@
 # npm-installs
 
 ## Description :
-**`npm-installs`** is a command-line application that allows you to run `npm install` on specified directories concurrently using a single command. It also has support for recursive installs with a an optional specified depth.
+**`npm-installs`** is a command-line application that allows you to run `npm install` on specified directories concurrently using a single command. It also has support for recursive installs with an optional specified depth.
 
 **`npm-installs` will automatically exclude all `/node_modules` directories.** 
 
@@ -15,14 +15,14 @@
 
 ### Examples
 
-##### Running `npm install` on proj1 and proj2 within ~/code/projects
+##### Running `npm install` on proj1 and proj2 within ~/projects
 
 ```bash
 $ npm-installs proj1 proj2
-Starting `npm install` for '/Users/johndoe/code/projects/proj1'
-Starting `npm install` for '/Users/johndoe/code/projects/proj2'
-Completed '/Users/johndoe/code/projects/proj1'
-Completed '/Users/johndoe/code/projects/proj2'
+Starting `npm install` for '/Users/johndoe/projects/proj1'
+Starting `npm install` for '/Users/johndoe/projects/proj2'
+Completed '/Users/johndoe/projects/proj1'
+Completed '/Users/johndoe/projects/proj2'
 Completed all
 ```
 
@@ -34,10 +34,10 @@ Completed all
 
 ```bash
 $ npm-installs projects -r
-Starting `npm install` for '/Users/johndoe/code/projects/proj1'
-Starting `npm install` for '/Users/johndoe/code/projects/proj2'
-Completed '/Users/johndoe/code/projects/proj1'
-Completed '/Users/johndoe/code/projects/proj2'
+Starting `npm install` for '/Users/johndoe/projects/proj1'
+Starting `npm install` for '/Users/johndoe/projects/proj2'
+Completed '/Users/johndoe/projects/proj1'
+Completed '/Users/johndoe/projects/proj2'
 Completed all
 ```
 ---
@@ -46,7 +46,7 @@ Completed all
 
 Folder structure
 ```
-/project-root
+~/project-root
     /proj1
     /proj2
         /subproj1
@@ -58,15 +58,15 @@ Folder structure
 
 ```bash
 $ npm-installs project-root -d 2
-Starting `npm install` for '/Users/johndoe/code/project-root'
-Starting `npm install` for '/Users/johndoe/code/project-root/proj1'
-Starting `npm install` for '/Users/johndoe/code/project-root/proj2'
-Starting `npm install` for '/Users/johndoe/code/project-root/proj2/subproj1'
-Starting `npm install` for '/Users/johndoe/code/project-root/proj2/subproj2'
-Completed '/Users/johndoe/code/project-root'
-Completed '/Users/johndoe/code/project-root/proj1'
-Completed '/Users/johndoe/code/project-root/proj2'
-Completed '/Users/johndoe/code/project-root/proj2/subproj1'
-Completed '/Users/johndoe/code/project-root/proj2/subproj1'
+Starting `npm install` for '/Users/johndoe/project-root'
+Starting `npm install` for '/Users/johndoe/project-root/proj1'
+Starting `npm install` for '/Users/johndoe/project-root/proj2'
+Starting `npm install` for '/Users/johndoe/project-root/proj2/subproj1'
+Starting `npm install` for '/Users/johndoe/project-root/proj2/subproj2'
+Completed '/Users/johndoe/project-root'
+Completed '/Users/johndoe/project-root/proj1'
+Completed '/Users/johndoe/project-root/proj2'
+Completed '/Users/johndoe/project-root/proj2/subproj1'
+Completed '/Users/johndoe/project-root/proj2/subproj1'
 Completed all
 ```
